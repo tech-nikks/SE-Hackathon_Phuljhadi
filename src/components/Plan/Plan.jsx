@@ -1,8 +1,6 @@
-import './Plan.css';
-
-import React from 'react';
-
-import Card from './card.jsx';
+import React, { useState } from "react";
+import "./plan.css";
+import Card from "./card.jsx";
 
 const Plan = () => {
   // Define an array of card data
@@ -14,7 +12,12 @@ const Plan = () => {
 
   return (
     <div>
+      <br />
+      <br />
+      <br />
+      <br />
       <h2>DIET PLAN TAILORED FOR YOU</h2>
+      <br />
       <div className="container">
         {/* Map over the cardData array to render Card components dynamically */}
         {cardData.map((card, index) => (

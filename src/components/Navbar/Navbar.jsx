@@ -1,8 +1,14 @@
-import React, { useContext, useState } from 'react'
-import  './Navbar.css'
-import { assets } from '../../assets/assets'
-import { Link } from 'react-router-dom'
-import { StoreContext } from '../../Context/StoreContext'
+import './Navbar.css';
+
+import React, {
+  useContext,
+  useState,
+} from 'react';
+
+import { Link } from 'react-router-dom';
+
+import { assets } from '../../assets/assets';
+import { StoreContext } from '../../Context/StoreContext';
 
 const Navbar = ({setShowLogin}) => {
 
@@ -11,7 +17,7 @@ const Navbar = ({setShowLogin}) => {
 
   return (
     <div className='navbar'>
-      <Link to='/'><img className='logo' src={assets.logo} alt="" /></Link>
+      <Link to='/'><img className='logo' src={assets.logo2} alt="" /></Link>
       <ul className="navbar-menu">
         <Link to="/" onClick={()=>setMenu("home")} className={`${menu==="home"?"active":""}`}>home</Link>
         <a href='#explore-menu' onClick={()=>setMenu("menu")} className={`${menu==="menu"?"active":""}`}>menu</a>
