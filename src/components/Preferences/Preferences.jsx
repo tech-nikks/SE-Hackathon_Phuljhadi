@@ -1,6 +1,8 @@
-import React, { useState } from "react";
-import "./preferences.css";
-import Button from "@mui/material/Button";
+import './Preferences.css';
+
+import React, { useState } from 'react';
+
+import Button from '@mui/material/Button';
 
 const Preferences = () => {
   const getTodayDate = () => {

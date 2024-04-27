@@ -6,7 +6,8 @@
 }
 
 .navbar .logo {
-    width: 150px;
+    width: 250px;
+    padding-top: 10px;
 }
 
 .navbar-menu {
