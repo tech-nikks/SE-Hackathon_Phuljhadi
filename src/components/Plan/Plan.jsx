@@ -14,7 +14,7 @@ const Plan = () => {
 
   return (
     <div>
-      <h2 className="title">DIET PLAN TAILORED FOR YOU</h2>
+      <h1 className="title" id="plan">DIET PLAN TAILORED FOR YOU</h1>
       <div className="container1">
         {/* Map over the cardData array to render Card components dynamically */}
         {cardData.map((card, index) => (

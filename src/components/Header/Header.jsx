@@ -1,17 +1,34 @@
 import './Header.css';
 
-import React from 'react';
+import React, { useState } from 'react';
+
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
-    return (
-        <div className='header'>
-            <div className='header-contents'>
-                <h2>Plan Your Meals</h2>
-                <p>Choose from a diverse menu featuring a delectable array of dishes crafted with the finest ingredients and culinary expertise. Our mission is to satisfy your cravings and elevate your dining experience, one delicious meal at a time.</p>
-                <button>View Menu</button>
-            </div>
-        </div>
-    )
-}
+    const [menu, setMenu] = useState("home");
+    const navigate = useNavigate(); // Initialize the useNavigate hook for navigation
+  
+    const handleMenuClick = (menuName) => {
+      setMenu(menuName);
+    };
 
-export default Header
+  return (
+    <div className='header'>
+      <div 
+        href='#preference'
+        onClick={() => handleMenuClick("preferences")} 
+        className={`${menu === "preferences" ? "active" : ""}`}
+      >
+        <div className='header-contents'>
+          <h2>Plan Your Meals</h2>
+          <p>
+          Discover a range of recipes to suit any taste and diet, from energizing breakfasts to hearty dinners. Our meal planner helps you streamline grocery shopping, reduce food waste, and make healthier choices. Create balanced meals and achieve your wellness goals with ease.
+          </p>
+          <button>Plan Now</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Header;
