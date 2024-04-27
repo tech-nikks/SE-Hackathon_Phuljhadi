@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./plan.css";
+import "./Plan.css";
 import Button from "@mui/material/Button";
 import axios from "axios";
 import LinearIndeterminate from "./loading.jsx";

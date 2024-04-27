@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./plan.css";
+import "./Plan.css";
 import Card from "./card.jsx";
 
 const Plan = () => {
