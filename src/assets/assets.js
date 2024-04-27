@@ -36,12 +36,14 @@ import food_6 from './food_6.png';
 import food_7 from './food_7.png';
 import food_8 from './food_8.png';
 import food_9 from './food_9.png';
+//import header1_img from './header1_img.png';
 import header_img from './header_img.png';
 import linkedin_icon from './linkedin_icon.png';
 import logo from './logo.png';
 import logo1_img from './logo1_img.png';
 import logo2 from './logo2.png';
 import logo3 from './logo3.png';
+import logo4 from './logo4.png';
 import menu_1 from './menu_1.png';
 import menu_2 from './menu_2.png';
 import menu_3 from './menu_3.png';
@@ -61,8 +63,10 @@ export const assets = {
     logo,
     logo2,
     logo3,
+    logo4,
     basket_icon,
     header_img,
+    //header1_img,
     logo1_img,
     search_icon,
     rating_starts,

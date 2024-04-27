@@ -10,16 +10,32 @@
 }
 
 .input {
-  border: 0.1px solid turquoise;
+  border: 0.1px solid rgb(45, 46, 47);
   outline: none;
   padding: 5px;
   border-radius: 10px;
   width: 50%;
   height: 30px;
-  color: rgb(29, 77, 72);
+  color: orangered;
   background-color: white;
 }
 
 input::placeholder {
-  color: turquoise;
+  color: orangered;
+}
+
+.heading {
+  color: orangered;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 12px;
+}
+
+.submit-button {  
+  padding: 5px;
+  width: 50%;
+  height: 30px;
+  color: white;
+  background-color: orangered;
+  border-radius: 10px;
 }

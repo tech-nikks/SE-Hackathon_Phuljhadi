@@ -1,5 +1,16 @@
-import React, { useRef, useState } from "react";
-import axios from "axios";
+import React, {
+  useRef,
+  useState,
+} from 'react';
+
+import axios from 'axios';
+
+import {
+  CameraAlt,
+  PhotoCamera,
+  Send,
+} from '@mui/icons-material';
+import { Fab } from '@mui/material';
 
 const ImageUploader = () => {
   const videoRef = useRef(null);
@@ -43,10 +54,18 @@ const ImageUploader = () => {
 
   return (
     <div>
-      <video ref={videoRef} autoPlay></video>
-      <button onClick={getWebcam}>Start Webcam</button>
-      <button onClick={captureImage}>Capture Image</button>
-      <button onClick={sendImageData}>Send Image</button>
+      <video ref={videoRef} autoPlay style={{ width: "100%", height: "auto" }}></video>
+      <div style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}>
+        <Fab color="primary" aria-label="start-webcam" onClick={getWebcam}>
+          <CameraAlt />
+        </Fab>
+        <Fab color="secondary" aria-label="capture-image" onClick={captureImage}>
+          <PhotoCamera />
+        </Fab>
+        <Fab color="success" aria-label="send-image" onClick={sendImageData}>
+          <Send />
+        </Fab>
+      </div>
     </div>
   );
 };
