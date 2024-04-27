@@ -22,7 +22,7 @@ const Footer = () => {
             <ul>
                 <li>Home</li>
                 <li>About us</li>
-                <li>Meal PLan</li>
+                <li>Meal Plan</li>
                 <li>Privacy policy</li>
             </ul>
         </div>

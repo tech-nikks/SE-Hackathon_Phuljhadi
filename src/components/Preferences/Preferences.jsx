@@ -136,6 +136,17 @@ const Preferences = () => {
           <option value="monthly">Monthly</option>
         </select>
         <br />
+        <p>Allergies</p>
+        <input
+          type="text"
+          name="allergies"
+          value={preferences.allergies}
+          onChange={handleChange}
+          required
+          className="input"
+          placeholder="List any allergies (e.g., peanuts, dairy)"
+        />
+        <br />
         <Button
           type="submit"
           variant="contained"

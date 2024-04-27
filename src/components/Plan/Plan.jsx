@@ -1,8 +1,12 @@
 import './Plan.css';
-import React, { useState, useContext, useEffect } from 'react';
-import Card from './Card.jsx';
-import { StoreContext } from '../../Context/StoreContext.jsx';
 
+import React, {
+  useContext,
+  useEffect,
+} from 'react';
+
+import { StoreContext } from '../../Context/StoreContext.jsx';
+import Card from './card.jsx';
 
 const Plan = () => {
   const { plan,setPlan } = useContext(StoreContext);
