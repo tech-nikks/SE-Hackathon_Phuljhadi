@@ -1,5 +1,5 @@
 import './Preferences.css';
-
+import axios from 'axios';
 import React, { useState } from 'react';
 
 import Button from '@mui/material/Button';
@@ -40,8 +40,8 @@ const Preferences = () => {
     console.log(preferences);
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8000/preferences", preferences);
-      console.log("Preferences Data submitted successfully:", preferences);
+      const response =await axios.post("http://localhost:8000/preferences", preferences);
+      console.log(response.data);
     } catch (error) {
       console.error("Error submitting preferences:", error);
     }
@@ -139,7 +139,7 @@ const Preferences = () => {
           type="submit"
           variant="contained"
           color="primary"
-          onClsick="handleSubmit"
+          onClick="handleSubmit"
         >
           Submit
         </Button>
