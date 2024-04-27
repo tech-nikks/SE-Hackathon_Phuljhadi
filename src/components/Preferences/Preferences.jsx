@@ -1,12 +1,16 @@
 import './Preferences.css';
-
-import React, { useState } from 'react';
-
+import React, { useState, useContext, useEffect } from 'react';
 import axios from 'axios';
-
 import Button from '@mui/material/Button';
+import { StoreContext } from '../../Context/StoreContext.jsx';
+
 
 const Preferences = () => {
+  
+  const { plan,setPlan } = useContext(StoreContext);
+  useEffect((
+  ) => { console.log("plan is", plan);} , [plan]);
+  
   const getTodayDate = () => {
     const today = new Date();
     const year = today.getFullYear();
@@ -16,13 +20,13 @@ const Preferences = () => {
   };
 
   const [preferences, setPreferences] = useState({
-    age: "",
-    gender: "",
-    height: "",
-    weight: "",
-    dietType: "",
-    mealFrequency: "",
-    mealSchedule: "",
+    age: "23",
+    gender: "male",
+    height: "123",
+    weight: "123",
+    dietType: "Low-Carb",
+    mealFrequency: "3",
+    mealSchedule: "weekly",
     date: getTodayDate(),
   });
 
@@ -38,11 +42,14 @@ const Preferences = () => {
     e.preventDefault();
     try {
       const response =await axios.post("http://localhost:8000/preferences", preferences);
-      console.log(response.data);
+      console.log(response.data.menu);
+      setPlan(response.data.menu);
     } catch (error) {
       console.error("Error submitting preferences:", error);
     }
   };
+
+  useEffect(() => {console.log("plan updated in preferences",plan)} , [plan]);
 
   return (
     <div>
