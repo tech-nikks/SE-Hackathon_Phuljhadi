@@ -37,8 +37,8 @@ const Preferences = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8000/preferences", preferences);
-      console.log("Preferences data submitted successfully:", preferences);
+      const response =await axios.post("http://localhost:8000/preferences", preferences);
+      console.log(response.data);
     } catch (error) {
       console.error("Error submitting preferences:", error);
     }
