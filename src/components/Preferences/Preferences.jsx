@@ -20,14 +20,15 @@ const Preferences = () => {
   };
 
   const [preferences, setPreferences] = useState({
-    age: "23",
-    gender: "male",
-    height: "123",
-    weight: "123",
-    dietType: "Low-Carb",
-    mealFrequency: "3",
-    mealSchedule: "weekly",
+    age: "",
+    gender: "",
+    height: "",
+    weight: "",
+    dietType: "",
+    mealFrequency: "",
+    mealSchedule: "",
     date: getTodayDate(),
+    allergies:"",
   });
 
   const handleChange = (e) => {
@@ -136,6 +137,25 @@ const Preferences = () => {
           <option value="monthly">Monthly</option>
         </select>
         <br />
+        <input
+          type="number"
+          name="mealFrequency"
+          value={preferences.mealFrequency}
+          onChange={handleChange}
+          required
+          className="input"
+          placeholder="Number of Meals per Day"
+        />
+        <br/>
+        <input
+          type="text"
+          name="allergies"
+          value={preferences.allergies}
+          onChange={handleChange}
+          required
+          className="input"
+          placeholder="Allergies"
+        />
         <Button
           type="submit"
           variant="contained"

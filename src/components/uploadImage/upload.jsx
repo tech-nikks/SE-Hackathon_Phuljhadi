@@ -56,7 +56,9 @@ const ImageUploader = () => {
 
   return (
     <div>
-      <video ref={videoRef} autoPlay style={{ width: "100%", height: "auto" }}></video>
+    <br/>
+    <br/>
+
       <Box
         style={{
           border: "2px solid gray",
@@ -108,6 +110,8 @@ const ImageUploader = () => {
           </Typography>
         </Box>
       </Box>
+      <video ref={videoRef} autoPlay style={{ width: "100%", height: "auto" }}></video>
+
     </div>
   );
 };
