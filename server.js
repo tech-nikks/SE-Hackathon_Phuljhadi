@@ -1,22 +1,27 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const fs = require('fs');
+const path = require('path');
+
 const app = express();
-const PORT = 8000; // Or any port you prefer
-const preferencesRoutes = require('./routes/preferences');
+const PORT = 8000;
 
 // Middleware
 app.use(cors());
-app.use(bodyParser.json({ origin: "http://localhost:5173" }));
+app.use(bodyParser.json({ limit: '10mb' }));
 
 // Routes
-// Add other route imports as needed
+const preferencesRoutes = require('./routes/preferences');
+const imageRoutes = require('./routes/image');
+const recipeRoutes = require('./routes/recipe');
 
-// Use Routes
+
 app.use('/preferences', preferencesRoutes);
-// Use other routes as needed
+app.use('/image', imageRoutes);
+app.use('/recipe', recipeRoutes);
 
-// Start server
+// Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
