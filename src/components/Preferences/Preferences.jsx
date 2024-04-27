@@ -1,4 +1,4 @@
-import './preferences.css';
+import './Preferences.css';
 
 import React, { useState } from 'react';
 
