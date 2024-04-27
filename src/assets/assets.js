@@ -84,37 +84,55 @@ export const assets = {
 
 export const menu_list = [
     {
-        menu_name: "Salad",
-        menu_image: menu_1
+      menu_name: "Salad",
+      menu_image: menu_1,
+      blog_link: "https://thatsaladlady.com/blog/", // Example blog link
+      description: "Fresh and healthy salads.", // Optional property for further description
     },
     {
-        menu_name: "Rolls",
-        menu_image: menu_2
+      menu_name: "Vegan",
+      menu_image: menu_2,
+      blog_link: "https://ohsheglows.com/recipe-categories/",
+      description: "Delicious rolls with various fillings.",
     },
     {
-        menu_name: "Deserts",
-        menu_image: menu_3
+      menu_name: "Health Cafes",
+      menu_image: menu_3,
+      blog_link: "https://thehealthcafe.co.uk/",
+      description: "Sweet and delightful desserts.",
     },
     {
-        menu_name: "Sandwich",
-        menu_image: menu_4
+      menu_name: "Keto",
+      menu_image: menu_4,
+      blog_link: "https://www.ketoforindia.com/indian-keto-diet-plan/",
+      description: "Tasty sandwiches with fresh ingredients.",
     },
     {
-        menu_name: "Cake",
-        menu_image: menu_5
+      menu_name: "Deserts",
+      menu_image: menu_5,
+      blog_link: "https://thecakeblog.com/",
+      description: "Cakes for every occasion.",
     },
     {
-        menu_name: "Pure Veg",
-        menu_image: menu_6
+      menu_name: "Pure Veg",
+      menu_image: menu_6,
+      blog_link: "https://www.vegrecipesofindia.com/",
+      description: "A variety of vegetarian dishes.",
     },
     {
-        menu_name: "Pasta",
-        menu_image: menu_7
+      menu_name: "Italian",
+      menu_image: menu_7,
+      blog_link: "https://italianfoodforever.com/",
+      description: "Classic pasta dishes and more.",
     },
     {
-        menu_name: "Noodles",
-        menu_image: menu_8
-    }]
+      menu_name: "Asian",
+      menu_image: menu_8,
+      blog_link: "https://www.spicetheplate.com/",
+      description: "Delicious noodle recipes.",
+    },
+  ];
+  
 
 export const food_list = [
     {

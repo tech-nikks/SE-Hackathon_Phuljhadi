@@ -52,8 +52,8 @@ const Preferences = () => {
   useEffect(() => {console.log("plan updated in preferences",plan)} , [plan]);
 
   return (
-    <div>
-      <h2 className="heading">PREFERENCES</h2>
+    <div className='preference' id='preference'>
+      <h1 className="heading">PREFERENCES</h1>
       <form onSubmit={handleSubmit} className="container2">
         <input
           type="number"
