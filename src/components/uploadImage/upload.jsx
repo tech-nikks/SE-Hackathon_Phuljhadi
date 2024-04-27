@@ -6,11 +6,15 @@ import React, {
 import axios from 'axios';
 
 import {
-  CameraAlt,
   PhotoCamera,
   Send,
+  VideoCameraBack,
 } from '@mui/icons-material';
-import { Fab } from '@mui/material';
+import {
+  Box,
+  Fab,
+  Typography,
+} from '@mui/material';
 
 const ImageUploader = () => {
   const videoRef = useRef(null);
@@ -36,13 +40,11 @@ const ImageUploader = () => {
       .drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
     const base64Data = canvas.toDataURL("image/png");
     setImageData(base64Data);
-    console.log(base64Data);
   };
 
   // Function to send image data to server
   const sendImageData = async () => {
     try {
-      console.log(imageData);
       const response = await axios.post("http://localhost:8000/image", {
         imageData,
       });
@@ -55,17 +57,57 @@ const ImageUploader = () => {
   return (
     <div>
       <video ref={videoRef} autoPlay style={{ width: "100%", height: "auto" }}></video>
-      <div style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}>
-        <Fab color="primary" aria-label="start-webcam" onClick={getWebcam}>
-          <CameraAlt />
-        </Fab>
-        <Fab color="secondary" aria-label="capture-image" onClick={captureImage}>
-          <PhotoCamera />
-        </Fab>
-        <Fab color="success" aria-label="send-image" onClick={sendImageData}>
-          <Send />
-        </Fab>
-      </div>
+      <Box
+        style={{
+          border: "2px solid gray",
+          padding: "20px",
+          marginTop: "10px",
+          marginBottom: "20px",
+          display: "flex",
+          justifyContent: "space-evenly",
+          alignItems: "center",
+        }}
+      >
+        {/* Each button and text in a vertical flex container */}
+        <Box style={{ display: "flex", flexDirection: "column", textAlign: "center", justifyContent: "center" }}>
+          <Fab 
+            style={{ backgroundColor: 'orangered', color: 'white', transform: 'scale(1.3)' }} 
+            aria-label="start-webcam" 
+            onClick={getWebcam}
+          >
+            <VideoCameraBack />
+          </Fab>
+          <Typography variant="caption" style={{ marginTop: "10px",marginLeft: "-13px", fontWeight: "bold" }}>
+            Start Webcam
+          </Typography>
+        </Box>
+
+        <Box style={{ display: "flex", flexDirection: "column", textAlign: "center", justifyContent: "center" }}>
+          <Fab 
+            style={{ backgroundColor: 'orangered', color: 'white', transform: 'scale(1.3)' }} 
+            aria-label="capture-image" 
+            onClick={captureImage}
+          >
+            <PhotoCamera />
+          </Fab>
+          <Typography variant="caption" style={{ marginTop: "10px",marginLeft: "-13px", fontWeight: "bold" }}>
+            Capture Image
+          </Typography>
+        </Box>
+
+        <Box style={{ display: "flex", flexDirection: "column", textAlign: "center", justifyContent: "center"}}>
+          <Fab 
+            style={{ backgroundColor: 'orangered', color: 'white', transform: 'scale(1.3)' }} 
+            aria-label="send-image" 
+            onClick={sendImageData}
+          >
+            <Send />
+          </Fab>
+          <Typography variant="caption" style={{ marginTop: "10px",marginLeft: "-7px", fontWeight: "bold" }}>
+            Send Image
+          </Typography>
+        </Box>
+      </Box>
     </div>
   );
 };

@@ -47,7 +47,7 @@ const Preferences = () => {
   return (
     <div>
       <h2 className="heading">PREFERENCES</h2>
-      <form onSubmit={handleSubmit} className="container">
+      <form onSubmit={handleSubmit} className="container2">
         <input
           type="number"
           name="age"

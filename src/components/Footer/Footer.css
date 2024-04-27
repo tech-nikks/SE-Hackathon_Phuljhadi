@@ -42,6 +42,17 @@
     height: 2px;
     margin: 20px 0px;
 }
+
+.footer-logo{
+    width: 400px;
+    margin-top: -60px;
+    margin-left: -30px;
+    margin-bottom: 0px;
+}
+
+.footer-description{
+    margin-top: -40px;
+}
 @media (max-width:750px) {
     .footer-content{
         display: flex;
