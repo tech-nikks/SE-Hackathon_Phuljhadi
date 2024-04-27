@@ -1,12 +1,8 @@
-import './Plan.css';
-
-import React, { useState } from 'react';
-
-import axios from 'axios';
-
-import Button from '@mui/material/Button';
-
-import LinearIndeterminate from './loading.jsx';
+import React, { useState } from "react";
+import "./plan.css";
+import Button from "@mui/material/Button";
+import axios from "axios";
+import LinearIndeterminate from "./loading.jsx";
 
 const Card = ({ meal, dish, calories, recipeLink }) => {
   // State to store the recipe data

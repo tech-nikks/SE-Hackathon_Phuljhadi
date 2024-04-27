@@ -1,8 +1,6 @@
-import './preferences.css';
-
-import React, { useState } from 'react';
-
-import Button from '@mui/material/Button';
+import React, { useState } from "react";
+import "./preferences.css";
+import Button from "@mui/material/Button";
 
 const Preferences = () => {
   const getTodayDate = () => {
@@ -10,10 +8,8 @@ const Preferences = () => {
     const year = today.getFullYear();
     const month = String(today.getMonth() + 1).padStart(2, "0");
     const day = String(today.getDate()).padStart(2, "0");
-    // Corrected template literal syntax
     return `${year}-${month}-${day}`;
   };
-  
 
   // State object to store form inputs
   const [preferences, setPreferences] = useState({
@@ -138,15 +134,13 @@ const Preferences = () => {
         </select>
         <br />
         <Button
-  type="submit"
-  variant="contained"
-  color="primary"
-  // Corrected onClick handler
-  onClick={handleSubmit}
->
-  Submit
-</Button>
-
+          type="submit"
+          variant="contained"
+          color="primary"
+          onClsick="handleSubmit"
+        >
+          Submit
+        </Button>
       </form>
     </div>
   );
