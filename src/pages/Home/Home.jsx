@@ -6,6 +6,7 @@ import Header from '../../components/Header/Header';
 import Plan from '../../components/Plan/Plan';
 import Preferences from '../../components/Preferences/Preferences';
 import ImageUploader from "../../components/uploadImage/upload.jsx";
+import Chatbot from "../../components/Chatbot/Chatbot.jsx";
 
 const Home = () => {
 
@@ -18,6 +19,7 @@ const Home = () => {
       <Preferences/>
       <Plan/>
       <ImageUploader/>
+      <Chatbot/>
       <AppDownload/>
     </>
   )
