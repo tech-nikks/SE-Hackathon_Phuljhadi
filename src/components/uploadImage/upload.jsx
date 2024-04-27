@@ -47,6 +47,7 @@ const ImageUploader = () => {
       <button onClick={getWebcam}>Start Webcam</button>
       <button onClick={captureImage}>Capture Image</button>
       <button onClick={sendImageData}>Send Image</button>
+      <div>RECIPIE </div>
     </div>
   );
 };
