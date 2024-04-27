@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
-import Header from '../../components/Header/Header'
-import ExploreMenu from '../../components/ExploreMenu/ExploreMenu'
-import FoodDisplay from '../../components/FoodDisplay/FoodDisplay'
-import AppDownload from '../../components/AppDownload/AppDownload'
+import React, { useState } from 'react';
+
+import AppDownload from '../../components/AppDownload/AppDownload';
+import ExploreMenu from '../../components/ExploreMenu/ExploreMenu';
+import Header from '../../components/Header/Header';
+import Plan from '../../components/Plan/Plan';
+import Preferences from '../../components/Preferences/Preferences';
 
 const Home = () => {
 
@@ -12,7 +14,8 @@ const Home = () => {
     <>
       <Header/>
       <ExploreMenu setCategory={setCategory} category={category}/>
-      <FoodDisplay category={category}/>
+      <Preferences/>
+      <Plan/>
       <AppDownload/>
     </>
   )
