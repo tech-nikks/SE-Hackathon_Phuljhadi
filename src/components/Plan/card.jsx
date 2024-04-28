@@ -16,9 +16,8 @@ const Card = ({ meal, dish, calories }) => {
   const fetchRecipe = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get("http://localhost:8000/recipe", {
-        params: { dishName: dish },
-      });
+      const response = await axios.post("http://localhost:8000/recipe", { dish: dish });
+      console.log('patil',response);
       setRecipeData(response.data);
       setIsLoading(false);
       setError(null);
@@ -27,6 +26,7 @@ const Card = ({ meal, dish, calories }) => {
       setError("Error fetching recipe. Please try again later.");
     }
   };
+  
 
   // Function to determine color based on calorie value
   const getCaloriesColor = () => {

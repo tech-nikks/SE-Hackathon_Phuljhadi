@@ -24,15 +24,15 @@ const ImageUploader = () => {
   const videoRef = useRef(null);
   const [imageData, setImageData] = useState(null);
 
-  // Function to access webcam
-  const getWebcam = async () => {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-      videoRef.current.srcObject = stream;
-    } catch (error) {
-      console.error("Error accessing webcam:", error);
-    }
-  };
+    // Function to access webcam
+    const getWebcam = async () => {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        videoRef.current.srcObject = stream;
+      } catch (error) {
+        console.error("Error accessing webcam:", error);
+      }
+    };
 
   // Function to capture image
   const captureImage = () => {
@@ -127,4 +127,4 @@ const ImageUploader = () => {
   );
 };
 
-export default ImageUploader;
+  export default ImageUploader;
