@@ -5,14 +5,10 @@ import React, {
   useEffect,
 } from 'react';
 
-import { StoreContext } from '../../Context/StoreContext.jsx';
-import Card from './Card.jsx';
 import DateIcon from '@mui/icons-material/DateRange';
 
-
-
-
-
+import { StoreContext } from '../../Context/StoreContext.jsx';
+import Card from './card.jsx';
 
 const Plan = () => {
   const { plan,setPlan } = useContext(StoreContext);
@@ -92,7 +88,7 @@ const Plan = () => {
 
   return (
     <div>
-      <h2 className="title">YOUR G-MEAL</h2>
+      <h1 className="title">YOUR G-MEAL</h1>
       {/* Render menu for each date */}
       {renderMenu}
     </div>

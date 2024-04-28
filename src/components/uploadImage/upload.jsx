@@ -1,3 +1,5 @@
+import './upload.css';
+
 import React, {
   useRef,
   useState,
@@ -58,7 +60,9 @@ const ImageUploader = () => {
   };
 
   return (
-    <div>
+    <div >
+    <h1 style={{ textAlign: "left", marginTop: "20px", color: "orangered" }}>Upload Image</h1>
+    <h3 style={{ textAlign: "left", marginTop: "20px" }}>Upload an image to get the recipe</h3>
     <br/>
     <br/>
 

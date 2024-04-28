@@ -1,13 +1,17 @@
-import React, { useState } from 'react'
-import Home from './pages/Home/Home'
-import Footer from './components/Footer/Footer'
-import Navbar from './components/Navbar/Navbar'
-import { Route, Routes } from 'react-router-dom'
-import Cart from './pages/Cart/Cart'
-import LoginPopup from './components/LoginPopup/LoginPopup'
-import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
-import MyOrders from './pages/MyOrders/MyOrders'
+import React, { useState } from 'react';
 
+import {
+  Route,
+  Routes,
+} from 'react-router-dom';
+
+import Footer from './components/Footer/Footer';
+import LoginPopup from './components/LoginPopup/LoginPopup';
+import Navbar from './components/Navbar/Navbar';
+import Cart from './pages/Cart/Cart';
+import Home from './pages/Home/Home';
+import MyOrders from './pages/MyOrders/MyOrders';
+import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
 
 const App = () => {
 
@@ -20,7 +24,7 @@ const App = () => {
         <Navbar setShowLogin={setShowLogin}/>
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='/cart' element={<Cart/>}/>
+          <Route path='/imageUpload' element={<Cart/>}/>
           <Route path='/order' element={<PlaceOrder/>}/>
           <Route path='/myorder' element={<MyOrders/>}/>
         </Routes>

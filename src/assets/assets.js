@@ -2,6 +2,7 @@ import add_icon_green from './add_icon_green.png';
 import add_icon_white from './add_icon_white.png';
 import app_store from './app_store.png';
 import basket_icon from './basket_icon.png';
+import camera from './camera.png';
 import cross_icon from './cross_icon.png';
 import facebook_icon from './facebook_icon.png';
 import food_1 from './food_1.png';
@@ -66,6 +67,7 @@ export const assets = {
     logo4,
     basket_icon,
     header_img,
+    camera,
     //header1_img,
     logo1_img,
     search_icon,

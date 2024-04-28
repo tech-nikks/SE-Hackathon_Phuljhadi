@@ -10,6 +10,10 @@
     padding-top: 10px;
 }
 
+.camera-logo{
+    width: 50px;
+}
+
 .navbar-menu {
     display: flex;
     list-style: none;

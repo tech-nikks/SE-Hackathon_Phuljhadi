@@ -1,4 +1,4 @@
-import './Cart.css';
+import './ImageToRecipe.css';
 
 import React, {
   useContext,
@@ -22,7 +22,7 @@ import {
 
 import { StoreContext } from '../../Context/StoreContext';
 
-const Cart = () => {
+const ImageToRecipe = () => {
   
     const [recipe, setRecipe]=useState("Find the recipe here !");
     const videoRef = useRef(null);
@@ -133,5 +133,5 @@ const Cart = () => {
     );
   };
   
-  export default Cart;
+  export default ImageToRecipe;
   

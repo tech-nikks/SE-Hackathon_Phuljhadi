@@ -25,7 +25,14 @@ const Navbar = ({setShowLogin}) => {
         <a href='#plan' onClick={()=>setMenu("plan")} className={`${menu==="plan"?"active":""}`}>plan</a>        
         <a href='#footer' onClick={()=>setMenu("contact")} className={`${menu==="contact"?"active":""}`}>contact us</a>
       </ul>
-      
+      <div className="navbar-right">
+       
+        <Link to='/imageUpload' className='navbar-search-icon'>
+          <img src={assets.camera} alt="" className='camera-logo'/>
+          <div className={getTotalCartAmount()>0?"dot":""}></div>
+        </Link>
+        <button onClick={()=>setShowLogin(true)}>sign in</button>
+    </div>
     </div>
   )
 }
