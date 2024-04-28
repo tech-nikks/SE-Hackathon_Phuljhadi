@@ -61,7 +61,7 @@ const ImageUploader = () => {
   };
 
   return (
-    <div >
+    <div className='upload' id='upload'>
     <h1 style={{ textAlign: "left", marginTop: "20px", color: "orangered" }}>Upload Image</h1>
     <h3 style={{ textAlign: "left", marginTop: "20px" }}>Upload an image to get the recipe</h3>
     <br/>
