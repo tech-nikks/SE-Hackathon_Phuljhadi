@@ -87,8 +87,8 @@ const Plan = () => {
   ));
 
   return (
-    <div>
-      <h1 className="title">YOUR G-MEAL</h1>
+    <div className='plan' id='plan'>
+      <h1 className="title" >YOUR G-MEAL</h1>
       {/* Render menu for each date */}
       {renderMenu}
     </div>
