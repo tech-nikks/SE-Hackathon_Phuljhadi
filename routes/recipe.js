@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const generateRecipe = require('../aimodels/gemini.text');
+const specificRecipe = require('../aimodels/gemini.recipe.js');
 
 // POST route to handle preferences data
 router.post('/', async (req, res) => {
@@ -9,7 +9,7 @@ router.post('/', async (req, res) => {
     console.log('Received preferences data:', preferencesData);
   
     // Call the generateRecipe function with preferencesData
-    const result = await generateRecipe(preferencesData);
+    const result = await specificRecipe(preferencesData);
     
     // Log success message if the data is sent correctly
     console.log('Recipe generation successful:', result);

@@ -1,25 +1,33 @@
-
 const dotenv = require("dotenv");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
+const fs = require("fs");
+const path = require('path');
+const meow = "../backend-iskimaaka/routes/image.jpg";
+
 dotenv.config();
 
-const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 
-async function imageGeneration(imageData) {
-    const model = genAI.getGenerativeModel({ model: "gemini-pro-vision" });
-    const prompt = "List top 3 common colors in this";
+const genAI = new GoogleGenerativeAI("AIzaSyBWr5Y2wVDvBYIsAoXpz9_pl2KYoBXPXbo");
 
-    const imageParts = [{
+function fileToGenerativePath(filePath, mimeType){
+    return {
         inlineData: {
-            data: imageData,
-            mimeType: "image/jpeg", // Adjust the mimeType as per your requirement
+            data: Buffer.from(fs.readFileSync(filePath)).toString("base64"),
+            mimeType,
         },
-    }];
+    };
+}
+
+async function run(){
+    const model = genAI.getGenerativeModel({model:"gemini-pro-vision"});
+    const prompt = "List out the ingredients from the  image provided and then prepare a detailed recipe out of it"; // Add an equal sign after 'prompt'
+
+    const imageParts = [fileToGenerativePath(meow,"image/jpeg")]; // Replace "image.jpg" with the correct image file path
+    console.log(imageParts);
 
     const result = await model.generateContent([prompt, ...imageParts]);
     const response = await result.response;
-    const text = response.text();
-    return text;
+    return response.text();
 }
 
-module.exports = imageGeneration;
+module.exports = { run };
