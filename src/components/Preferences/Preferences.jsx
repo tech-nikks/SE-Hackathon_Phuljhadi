@@ -55,6 +55,7 @@ const Preferences = () => {
   return (
     <div className='preference' id='preference'>
       <h1 className="heading">PREFERENCES</h1>
+      <p className="heading">This allows us to prepare a plan suitable to you </p>
       <form onSubmit={handleSubmit} className="container2">
         <input
           type="number"
@@ -137,16 +138,7 @@ const Preferences = () => {
           <option value="monthly">Monthly</option>
         </select>
         <br />
-        <input
-          type="number"
-          name="mealFrequency"
-          value={preferences.mealFrequency}
-          onChange={handleChange}
-          required
-          className="input"
-          placeholder="Number of Meals per Day"
-        />
-        <br/>
+        <p>Allergies</p>
         <input
           type="text"
           name="allergies"
@@ -154,8 +146,10 @@ const Preferences = () => {
           onChange={handleChange}
           required
           className="input"
-          placeholder="Allergies"
+          placeholder="List any allergies (e.g., peanuts, dairy)"
         />
+      
+        <br />
         <Button
           type="submit"
           variant="contained"
@@ -167,7 +161,7 @@ const Preferences = () => {
             },
           }}
         >
-          Submit
+          CREATE PLAN
         </Button>
       </form>
     </div>

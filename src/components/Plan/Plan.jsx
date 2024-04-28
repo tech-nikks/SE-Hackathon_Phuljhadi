@@ -1,7 +1,17 @@
 import './Plan.css';
-import React, { useState, useContext, useEffect } from 'react';
-import Card from './Card.jsx';
+
+import React, {
+  useContext,
+  useEffect,
+} from 'react';
+
 import { StoreContext } from '../../Context/StoreContext.jsx';
+import Card from './Card.jsx';
+import DateIcon from '@mui/icons-material/DateRange';
+
+
+
+
 
 
 const Plan = () => {
@@ -53,7 +63,9 @@ const Plan = () => {
   // Render menu for each date
   const renderMenu = plan.map((menu, index) => (
     <div key={index}>
-      <h3>Date: {menu.date}</h3>
+    <br/>
+      <h3 style={{color:"red"}}><DateIcon/>  {menu.date}</h3>
+      <br/>
       <div className="container1">
         {/* Map over the meal categories in the menu */}
         {Object.keys(menu).map((mealCategory, mealIndex) => {
@@ -80,7 +92,7 @@ const Plan = () => {
 
   return (
     <div>
-      <h2 className="title">DIET PLAN TAILORED FOR YOU</h2>
+      <h2 className="title">YOUR G-MEAL</h2>
       {/* Render menu for each date */}
       {renderMenu}
     </div>
