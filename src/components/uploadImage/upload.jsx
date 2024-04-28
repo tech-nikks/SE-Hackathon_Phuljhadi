@@ -53,7 +53,8 @@ const ImageUploader = () => {
         imageData,
       });
       console.log("Response from server:", response.data);
-      setRecipe(response.data);
+      console.log("patil");
+      setRecipe(response.data.generatedContent);
     } catch (error) {
       console.error("Error sending image data:", error);
     }

@@ -5,7 +5,7 @@ import ExploreMenu from '../../components/ExploreMenu/ExploreMenu';
 import Header from '../../components/Header/Header';
 import Plan from '../../components/Plan/Plan';
 import Preferences from '../../components/Preferences/Preferences';
-//import ImageUploader from '../../components/uploadImage/upload.jsx';
+import ImageUploader from '../../components/uploadImage/upload.jsx';
 import HydrationReminder from '../../components/stayhydrated/stayhydrated.jsx';
 
 const Home = () => {
@@ -19,6 +19,7 @@ const Home = () => {
       <Preferences/>
       <Plan/>
       <Chatbot/>
+      <ImageUploader/>
       <HydrationReminder/>
     </>
   )
