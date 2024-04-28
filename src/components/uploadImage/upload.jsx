@@ -17,6 +17,8 @@ import {
 } from '@mui/material';
 
 const ImageUploader = () => {
+
+  const [recipe, setRecipe]=useState("Find the recipe here !");
   const videoRef = useRef(null);
   const [imageData, setImageData] = useState(null);
 
@@ -49,6 +51,7 @@ const ImageUploader = () => {
         imageData,
       });
       console.log("Response from server:", response.data);
+      setRecipe(response.data);
     } catch (error) {
       console.error("Error sending image data:", error);
     }
@@ -110,8 +113,12 @@ const ImageUploader = () => {
           </Typography>
         </Box>
       </Box>
+      <br/>
+      <div className="recipe">
+      {recipe}
+      </div>
+      <br/>
       <video ref={videoRef} autoPlay style={{ width: "100%", height: "auto" }}></video>
-
     </div>
   );
 };

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './stayhydrated.css'; // Styles for the popup
 
 import ScheduleIcon from '@mui/icons-material/Schedule';
-
 import Fab from '@mui/material/Fab';
 import AddIcon from '@mui/icons-material/Add';
 
@@ -56,16 +55,15 @@ const HydrationReminder = () => {
         <div className="popup-overlay" onClick={handleClosePopup}>
           <div className="popup-content">
             <p>Remember to drink water!</p>
-            <Fab color="primary" aria-label="add"
-            onClick={HandleClosePopup}>
-      <AddIcon />
-    </Fab>
+            <Fab color="primary" aria-label="Close" onClick={handleClosePopup}>
+              <AddIcon />
+            </Fab>
           </div>
         </div>
       )}
       <div className="counter-section">
-      <ScheduleIcon />{"   "}
-      Next water break {formatTime(timeRemaining)}
+        <ScheduleIcon />{"   "}
+        Next water break {formatTime(timeRemaining)}
       </div>
     </>
   );
