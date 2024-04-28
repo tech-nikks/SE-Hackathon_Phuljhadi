@@ -5,14 +5,14 @@ dotenv.config();
 
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 
-async function specificRecipe(recipe) {
+async function specificInput(input) {
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
-    // Extract the name of the dish from the recipe object
-    const dishName = recipe.dish;
+    // Extract the input content from the request body
+    const inputContent = input.message;
 
-    // Use the dish name in the prompt
-    const prompt = `Get me a complete detailed recipe of ${dishName}. `;
+    // Use the input content in the prompt
+    const prompt = `${inputContent}. `;
 
     const result = await model.generateContent(prompt);
     const response = await result.response;
@@ -20,5 +20,6 @@ async function specificRecipe(recipe) {
     return text;
 }
 
+module.exports = specificInput;
 
-module.exports = specificRecipe;
+

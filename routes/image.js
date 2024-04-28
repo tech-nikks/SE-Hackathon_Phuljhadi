@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
         }
 
         // Generate a unique filename
-        const filename = `image.jpg`;
+        const filename = "image.jpg";
 
         // Save the decoded image to the aimodels directory
         fs.writeFile(path.join(aimodelsDirectory, filename), base64Data, 'base64', async (err) => {
