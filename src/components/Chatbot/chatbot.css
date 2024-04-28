@@ -50,7 +50,7 @@
   bottom:10px;
   right:10px;
   height:55px;
-  background-color: turquoise;
+  background-color: orangered;
   border:none;
   width:10%;
   border-radius: 10px;
@@ -61,7 +61,7 @@
 .submit:hover{
 box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7),
 -3px -3px 5px rgba(255, 255, 255, 0.7);
-  background-color: hsl(174, 69%, 39%);
+  background-color: orangered;
   transition: all 0.3s ease;
 }
 
@@ -74,6 +74,7 @@ box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7),
   height:85%;
   width:95%;
   overflow:auto;
+  padding-top:20px ;
 }
 
 .chatlog::-webkit-scrollbar {
@@ -83,7 +84,7 @@ box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7),
 .chatloggpt{
   padding:10px;
   height:auto;
-  background-color: hsl(174, 69%, 39%);
+  background-color: orangered;
   width:90%;
   word-wrap: break-word;
   white-space: pre-line;
@@ -134,7 +135,7 @@ box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7),
   z-index:20;
   height:50px;
   width:50px;
-  background-color:turquoise;
+  background-color:orangered;
   bottom:30px;
   right:30px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
@@ -143,7 +144,7 @@ box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7),
 }
 
 .openchat:hover{
-  background-color: hsl(174, 69%, 39%);
+  background-color: orangered);
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
   transition: all 0.3s ease;
 }

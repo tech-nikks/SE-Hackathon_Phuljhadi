@@ -1,10 +1,12 @@
-import React, { useState } from "react";
-import "./Plan.css";
-import Button from "@mui/material/Button";
-import axios from "axios";
-import LinearIndeterminate from "./loading.jsx";
+import React, { useState } from 'react';
 
-const Card = ({ meal, dish, calories, recipeLink }) => {
+import axios from 'axios';
+
+import Button from '@mui/material/Button';
+
+import LinearIndeterminate from './loading.jsx';
+
+const Card = ({ meal, dish, calories }) => {
   // State to store the recipe data
   const [recipeData, setRecipeData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -13,23 +15,18 @@ const Card = ({ meal, dish, calories, recipeLink }) => {
   // Function to fetch recipe data
   const fetchRecipe = async () => {
     try {
-      // Set loading state
       setIsLoading(true);
-      // Make axios request to the recipe endpoint, sending dish name as a parameter
-      const response = await axios.get("http://localhost:8000/recipe", {
-        params: { dishName: dish },
-      });
-      // Set recipe data
+      const response = await axios.post("http://localhost:8000/recipe", { dish: dish });
+      console.log('patil',response);
       setRecipeData(response.data);
-      // Reset loading and error states
       setIsLoading(false);
       setError(null);
     } catch (error) {
-      // Handle errors
       setIsLoading(false);
       setError("Error fetching recipe. Please try again later.");
     }
   };
+  
 
   // Function to determine color based on calorie value
   const getCaloriesColor = () => {
@@ -43,12 +40,24 @@ const Card = ({ meal, dish, calories, recipeLink }) => {
   };
 
   return (
-    <div>
+    <div className="card-container">
       <div className="card">
-        <p className="bold">{meal}</p>
-        <p>{dish}</p>
-        <p style={{ color: getCaloriesColor() }}>{calories} cal</p>
-        <Button variant="contained" onClick={fetchRecipe}>
+        <div className="card-info">
+          <p className="bold">{meal}</p>
+          <p>{dish}</p>
+          <p style={{ color: getCaloriesColor() }}>{calories} cal</p>
+        </div>
+        <Button
+          variant="contained"
+          sx={{
+            backgroundColor: "orangered",
+            color: "white",
+            '&:hover': {
+              backgroundColor: "darkorange",
+            },
+          }}
+          onClick={fetchRecipe}
+        >
           View Recipe
         </Button>
       </div>
@@ -56,7 +65,7 @@ const Card = ({ meal, dish, calories, recipeLink }) => {
       {isLoading && <LinearIndeterminate />}
       {error && <p>{error}</p>}
       {recipeData && (
-        <div>
+        <div className="recipe">
           <p>Recipe:</p>
           <p>{recipeData}</p>
         </div>

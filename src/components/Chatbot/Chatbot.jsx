@@ -1,10 +1,18 @@
-import { useState, useEffect, useRef } from 'react';
+import './chatbot.css';
+
+import {
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
+
 import axios from 'axios';
-import SendIcon from '@mui/icons-material/Send';
-import LoadingIcon from './LoadingIcon';
+
 import AssistantIcon from '@mui/icons-material/Assistant';
 import CloseIcon from '@mui/icons-material/Close';
-import "./chatbot.css";
+import SendIcon from '@mui/icons-material/Send';
+
+import LoadingIcon from './LoadingIcon';
 
 function Chatbot() {
     const [message, setPrompt] = useState("");
@@ -80,7 +88,7 @@ function Chatbot() {
                             );
                         })}
                         {waiting && <LoadingIcon />}
-                        {serviceUnavailable && !waiting && <p style={{color:"turquoise"}}>Service unavailable</p>}
+                        {serviceUnavailable && !waiting && <p style={{color:"orangered"}}>Service unavailable</p>}
                     </div>
                     <input 
                         className="promptbox" 

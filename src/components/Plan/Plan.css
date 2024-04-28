@@ -1,26 +1,66 @@
-.container {
+/* Plan.css */
+.container1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  padding: 20px 20px 20px 20px;
+  gap: 20px;
+  padding: 20px;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
   border-radius: 30px;
 }
 
 .card {
-  min-width: 40rem;
+  min-width: 35rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
-  padding: 20px 20px 20px 20px;
+  padding: 15px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
 }
 
 .bold {
   font-weight: 700;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.recipe {
+  padding: 10px;
+  margin-top: 10px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.title {
+  color: orangered;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  padding-left: 12px;
+  font-weight: 500;
+}
+  
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+  }
+
+  .container {
+    gap: 15px;
+  }
 }

@@ -36,12 +36,14 @@ import food_6 from './food_6.png';
 import food_7 from './food_7.png';
 import food_8 from './food_8.png';
 import food_9 from './food_9.png';
+//import header1_img from './header1_img.png';
 import header_img from './header_img.png';
 import linkedin_icon from './linkedin_icon.png';
 import logo from './logo.png';
 import logo1_img from './logo1_img.png';
 import logo2 from './logo2.png';
 import logo3 from './logo3.png';
+import logo4 from './logo4.png';
 import menu_1 from './menu_1.png';
 import menu_2 from './menu_2.png';
 import menu_3 from './menu_3.png';
@@ -61,8 +63,10 @@ export const assets = {
     logo,
     logo2,
     logo3,
+    logo4,
     basket_icon,
     header_img,
+    //header1_img,
     logo1_img,
     search_icon,
     rating_starts,
@@ -80,37 +84,55 @@ export const assets = {
 
 export const menu_list = [
     {
-        menu_name: "Salad",
-        menu_image: menu_1
+      menu_name: "Salad",
+      menu_image: menu_1,
+      blog_link: "https://thatsaladlady.com/blog/", // Example blog link
+      description: "Fresh and healthy salads.", // Optional property for further description
     },
     {
-        menu_name: "Rolls",
-        menu_image: menu_2
+      menu_name: "Vegan",
+      menu_image: menu_2,
+      blog_link: "https://ohsheglows.com/recipe-categories/",
+      description: "Delicious rolls with various fillings.",
     },
     {
-        menu_name: "Deserts",
-        menu_image: menu_3
+      menu_name: "Health Cafes",
+      menu_image: menu_3,
+      blog_link: "https://thehealthcafe.co.uk/",
+      description: "Sweet and delightful desserts.",
     },
     {
-        menu_name: "Sandwich",
-        menu_image: menu_4
+      menu_name: "Keto",
+      menu_image: menu_4,
+      blog_link: "https://www.ketoforindia.com/indian-keto-diet-plan/",
+      description: "Tasty sandwiches with fresh ingredients.",
     },
     {
-        menu_name: "Cake",
-        menu_image: menu_5
+      menu_name: "Deserts",
+      menu_image: menu_5,
+      blog_link: "https://thecakeblog.com/",
+      description: "Cakes for every occasion.",
     },
     {
-        menu_name: "Pure Veg",
-        menu_image: menu_6
+      menu_name: "Pure Veg",
+      menu_image: menu_6,
+      blog_link: "https://www.vegrecipesofindia.com/",
+      description: "A variety of vegetarian dishes.",
     },
     {
-        menu_name: "Pasta",
-        menu_image: menu_7
+      menu_name: "Italian",
+      menu_image: menu_7,
+      blog_link: "https://italianfoodforever.com/",
+      description: "Classic pasta dishes and more.",
     },
     {
-        menu_name: "Noodles",
-        menu_image: menu_8
-    }]
+      menu_name: "Asian",
+      menu_image: menu_8,
+      blog_link: "https://www.spicetheplate.com/",
+      description: "Delicious noodle recipes.",
+    },
+  ];
+  
 
 export const food_list = [
     {

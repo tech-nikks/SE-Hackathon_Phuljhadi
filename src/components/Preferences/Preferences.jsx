@@ -1,19 +1,24 @@
 import './Preferences.css';
+import React, { useState, useContext, useEffect } from 'react';
 import axios from 'axios';
-import React, { useState } from 'react';
-
 import Button from '@mui/material/Button';
+import { StoreContext } from '../../Context/StoreContext.jsx';
+
 
 const Preferences = () => {
+  
+  const { plan,setPlan } = useContext(StoreContext);
+  useEffect((
+  ) => { console.log("plan is", plan);} , [plan]);
+  
   const getTodayDate = () => {
     const today = new Date();
     const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, "0");
-    const day = String(today.getDate()).padStart(2, "0");
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
     return `${year}-${month}-${day}`;
   };
 
-  // State object to store form inputs
   const [preferences, setPreferences] = useState({
     age: "",
     gender: "",
@@ -23,9 +28,9 @@ const Preferences = () => {
     mealFrequency: "",
     mealSchedule: "",
     date: getTodayDate(),
+    allergies:"",
   });
 
-  // Function to handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setPreferences((prevPreferences) => ({
@@ -34,23 +39,24 @@ const Preferences = () => {
     }));
   };
 
-  // Function to handle form submission
   const handleSubmit = async (e) => {
-    console.log("submit clicked");
-    console.log(preferences);
     e.preventDefault();
     try {
       const response =await axios.post("http://localhost:8000/preferences", preferences);
-      console.log(response.data);
+      console.log(response.data.menu);
+      setPlan(response.data.menu);
     } catch (error) {
       console.error("Error submitting preferences:", error);
     }
   };
 
+  useEffect(() => {console.log("plan updated in preferences",plan)} , [plan]);
+
   return (
-    <div>
-      <h2>PREFERENCES</h2>
-      <form onSubmit={handleSubmit} className="container">
+    <div className='preference' id='preference'>
+      <h1 className="heading">PREFERENCES</h1>
+      <p className="heading">This allows us to prepare a plan suitable to you </p>
+      <form onSubmit={handleSubmit} className="container2">
         <input
           type="number"
           name="age"
@@ -68,7 +74,6 @@ const Preferences = () => {
           onChange={handleChange}
           required
           className="input"
-          placeholder="Gender"
         >
           <option value="">Select</option>
           <option value="male">Male</option>
@@ -96,14 +101,13 @@ const Preferences = () => {
           placeholder="Weight (kg)"
         />
         <br />
-        <p>Diet type</p>
+        <p>Diet Type</p>
         <select
           name="dietType"
           value={preferences.dietType}
           onChange={handleChange}
           required
           className="input"
-          placeholder="Diet Type"
         >
           <option value="">Select</option>
           <option value="balanced">Balanced Diet (Recommended)</option>
@@ -121,27 +125,43 @@ const Preferences = () => {
           placeholder="Number of Meals per Day"
         />
         <br />
-        <p>weekly/monthly</p>
+        <p>Meal Schedule</p>
         <select
           name="mealSchedule"
           value={preferences.mealSchedule}
           onChange={handleChange}
           required
           className="input"
-          placeholder="Meal Schedule"
         >
           <option value="">Select</option>
           <option value="weekly">Weekly</option>
           <option value="monthly">Monthly</option>
         </select>
         <br />
+        <p>Allergies</p>
+        <input
+          type="text"
+          name="allergies"
+          value={preferences.allergies}
+          onChange={handleChange}
+          required
+          className="input"
+          placeholder="List any allergies (e.g., peanuts, dairy)"
+        />
+      
+        <br />
         <Button
           type="submit"
           variant="contained"
-          color="primary"
-          onClick="handleSubmit"
+          sx={{
+            backgroundColor: 'orangered',
+            color: 'white',
+            '&:hover': {
+              backgroundColor: 'darkorange',
+            },
+          }}
         >
-          Submit
+          CREATE PLAN
         </Button>
       </form>
     </div>
