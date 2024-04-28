@@ -8,7 +8,7 @@ import React, {
 import DateIcon from '@mui/icons-material/DateRange';
 
 import { StoreContext } from '../../Context/StoreContext.jsx';
-import Card from './card.jsx';
+import Card from './Card.jsx';
 
 const Plan = () => {
   const { plan,setPlan } = useContext(StoreContext);
